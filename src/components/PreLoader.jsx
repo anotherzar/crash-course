@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import TextBlock from "./textBlock";
+import DotCenter from "./DotCenter";
+import Counter_Number from "./Counter_Num";
 
 const PreLoader = () => {
   const [loading, setLoading] = useState(true);
@@ -22,44 +25,17 @@ const PreLoader = () => {
       }}
       className="w-screen h-screen fixed inset-0 overflow-hidden z-50 bg-black"
     >
-      <section className="flex justify-center items-center w-full h-full space-x-6">
-        <motion.div
-          initial={{ y: 80, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            duration: 1.5,
-            ease: [0.95, 0, 0.01, 0.99],
-          }}
-          className="overflow-hidden"
-        >
-          <h1 className="text-white text-4xl font-bold">Code By</h1>
-        </motion.div>
-
-        <motion.div
-          initial={{ scale: 0.3, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{
-            duration: 1.2,
-            ease: [0.95, 0, 0.01, 0.99],
-          }}
-          id="imageCon"
-          className="w-[60px] h-[60px] bg-white rounded-full flex items-center justify-center"
-        >
-          {/*<img src="..." alt="" /> */}
-        </motion.div>
-
-        <motion.div
-          initial={{ y: -80, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{
-            duration: 1.5,
-            ease: [0.95, 0, 0.01, 0.99],
-          }}
-          className="overflow-hidden"
-        >
-          <h1 className="text-white text-4xl font-bold">Zar</h1>
-        </motion.div>
-      </section>
+      {/* ✅ Bungkus jadi flex-col biar counter nempel di bawah teks */}
+      <div className="flex flex-col justify-center items-center w-full h-full">
+        <section className="flex items-center space-x-2">
+          <TextBlock direction="up">Code By</TextBlock>
+          <TextBlock direction="down">Zar</TextBlock>
+        </section>
+        
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-full px-6">
+          <Counter_Number from={0} to={100} duration={1.5} />
+        </div>
+      </div>
     </motion.div>
   );
 };
