@@ -21,7 +21,7 @@ const Counter_Number = ({ from = 0, to = 100, duration = 1.5 }) => {
     <div className="mt-8 w-full px-1 max-w-lg">
       {/* Angka */}
       <motion.span
-        className="block text-center text-white text-2xl font-mono mb-3"
+        className="block text-center text-white text-2xl font-mono mb-16"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
