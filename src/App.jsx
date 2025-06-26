@@ -15,7 +15,7 @@ function App() {
           <q>Lorem ipsum dolor sit amet.</q>
         </div>
         <h1 className='text-5xl/tight font-bold mb-6'>Fazar Ripai Hanapih</h1>
-        <p className='text-base/loose mb-6 opacity-50 text-justify'>
+        <p className='text-base/loose mb-6 text-gray-400 text-justify'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, doloribus minus! Nam provident tempore suscipit
         </p>
         <div className='items-center flex gap-4'>
@@ -31,7 +31,7 @@ function App() {
     <div className="about mt-16 py-10">
       <div className="mx-auto p-7 bg-zinc-800 rounded-2xl ">
         <h1 className='font-bold text-2xl'>About Me</h1>
-        <p className='text-base/loose opacity-50 mt-4 text-justify'>
+        <p className='text-base/loose text-gray-400 mt-4 text-justify'>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, quaerat recusandae? Iure dignissimos, incidunt maiores exercitationem consequuntur, pariatur quod nemo vero nesciunt ullam cum. Ipsa, a quam! Tenetur obcaecati quasi a maiores ipsam accusantium dolore eum maxime distinctio quae autem sunt sed animi incidunt voluptate, eligendi rerum fugit ex quibusdam optio expedita ea? Officiis modi suscipit nesciunt, eos quidem fugiat?
         </p>
       </div>
@@ -47,7 +47,7 @@ function App() {
               <img src={tool.logo} alt="" className='w-16 p-1'/>
               <div className=''>
                 <h4 className='font-bold'>{tool.app_name}</h4>
-                <p className='opacity-50'>{tool.detail}</p>
+                <p className='text-gray-400'>{tool.detail}</p>
               </div>
             </div>
           ))}
@@ -87,13 +87,6 @@ function App() {
           </div>
         ))}
       </div>
-    </div>
-
-    {/* Footer */}
-    <div className="footer | items-center bg-zinc-600">
-      <h1>
-        Made with luv
-      </h1>
     </div>
     </>
   )
