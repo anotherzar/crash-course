@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 const Counter_Number = ({ from = 0, to = 100, duration = 1.5 }) => {
   const count = useMotionValue(from);
   const [display, setDisplay] = useState(from);
-
   const progressWidth = useTransform(count, latest => `${latest}%`);
 
   useEffect(() => {
@@ -14,16 +13,16 @@ const Counter_Number = ({ from = 0, to = 100, duration = 1.5 }) => {
       onUpdate: latest => setDisplay(Math.floor(latest)),
     });
 
-    return controls.stop;
+    return () => controls.stop();
   }, [count, to, duration]);
 
   return (
-    <div className="mt-8 w-full px-1 max-w-lg">
-      {/* Angka */}
+    <div className="w-[80vw] max-w-md px-4 space-y-2">
+      {/* Number */}
       <motion.span
-        className="block text-center text-white text-2xl font-mono mb-16"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        className="block text-center text-white text-xl md:text-2xl font-mono"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{
           delay: 0.3,
           duration: 1,
@@ -33,18 +32,11 @@ const Counter_Number = ({ from = 0, to = 100, duration = 1.5 }) => {
         {display}%
       </motion.span>
 
-      {/* Progress Bar Container */}
+      {/* Progress Bar */}
       <div className="w-full h-2 bg-white/20 rounded-full overflow-hidden">
-        {/* Progress Fill */}
         <motion.div
           style={{ width: progressWidth }}
           className="h-full bg-white rounded-full"
-          initial={{ width: 0 }}
-          animate={{ width: `${to}%` }}
-          transition={{
-            duration,
-            ease: [0.95, 0, 0.01, 0.99],
-          }}
         />
       </div>
     </div>
