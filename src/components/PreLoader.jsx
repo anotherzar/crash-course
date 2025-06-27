@@ -30,7 +30,7 @@ const PreLoader = () => {
           <TextBlock direction="down">Zar</TextBlock>
         </section>
         
-        <div className="absolute bottom-[10%] left-1/2-translate-x-1/2 w-[90vw] sm:w-[80vw] md:w-[60vw] lg:w-[400px] px-4">
+        <div className="absolute bottom-[20%] left-1/2-translate-x-1/2 w-[90vw] sm:w-[80vw] md:w-[60vw] lg:w-[400px] px-4">
           <Counter_Number from={0} to={100} duration={1.5} />
         </div>
       </div>
