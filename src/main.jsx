@@ -7,6 +7,7 @@ import 'remixicon/fonts/remixicon.css'
 import Footer from './components/Footer.jsx'
 import PreLoader from './components/PreLoader.jsx'
 
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <PreLoader />
