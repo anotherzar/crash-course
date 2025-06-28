@@ -16,11 +16,11 @@ function App() {
     {/* Landing */}
     <div className="hero grid grid-cols-1 md:grid-cols-2 items-start pt-0 gap-3 xl:gap-0">
       <div className="pt-8 md:pt-16">
-        <h1 className='text-5xl/tight font-medium mb-6 border-y border-white/50'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, vero.</h1>
-        <p className='text-config-1 text-base/loose text-gray-400 text-justify border-y border-white/50'>
+        <h1 className='text-5xl/tight font-medium mb-6 border-y border-white/50 px-4'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, vero.</h1>
+        <p className='text-config-1 px-4 text-base/loose text-gray-400 text-justify border-y border-white/50'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, doloribus minus! Nam provident tempore suscipit
         </p>
-        <div className='mt-10 border-y border-white/50'>
+        <div className='mt-10 border-y border-white/50 px-4'>
           <button className='bg-zinc-800 p-5 rounded-2xl border border-white/50'>
             <a href="" className='text-config-1'>Download CV</a>
           </button>

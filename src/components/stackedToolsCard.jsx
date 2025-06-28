@@ -15,8 +15,8 @@ const CardStackHorizontal = () => {
   };
 
   return (
-    <div className="flex justify-center items-start pt-6 pb-10  overflow-x-hidden">
-      <ul className="relative w-full max-w-5xl h-[200px] ml-6 md:ml-50 lg:ml-50">
+    <div className="flex px-4 md:px-0 justify-center items-start pt-6 pb-10  overflow-x-hidden">
+      <ul className="relative w-full max-w-5xl h-[200px] ml-6 md:ml-50 lg:ml-35">
         {cards.map((tool, index) => {
           const offset = index - 0;
           const canDrag = index === 0;
