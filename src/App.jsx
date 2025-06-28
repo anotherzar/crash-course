@@ -5,6 +5,7 @@ import {listSocial} from "./data"
 import AboutCodeBlock from './components/AboutCodeBlock'
 import { motion } from 'framer-motion';
 import ToolsSection from './components/stackedToolsCard';
+import Hero_3d from './components/spline3D_obj';
 
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
         </div>
       </div>
       <div className='relative flex justify-center md:justify-end w-full aspect-square h-max overflow-hidden border-white/50 border-y-0 border-l-0 md:border-l-1 md:border-b-0'>
-        {heroImg ? (
+        <Hero_3d />
+        {/* {heroImg ? (
           <img
             src={heroImg}
             alt="Hero"
@@ -35,7 +37,7 @@ function App() {
           />
         ) : (
           <div className="absolute" />
-        )}
+        )} */}
       </div>
     </div>
 
