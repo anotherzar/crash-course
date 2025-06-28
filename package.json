@@ -11,9 +11,12 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.10",
+    "framer-motion": "^12.19.2",
+    "lodash-move": "^1.1.1",
     "motion": "^12.19.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-syntax-highlighter": "^15.6.1",
     "remixicon": "^4.6.0",
     "tailwindcss": "^4.1.10"
   },

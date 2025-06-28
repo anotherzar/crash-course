@@ -1,45 +1,41 @@
-import{useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
-    const [active, setActive] = useState(false);
+  const [active, setActive] = useState(false);
 
-    useEffect(()=> {
-        const handleScroll = () => {
-            if (window.scrollY > 150) {
-                setActive(true);
-            } else {
-                setActive(false);
-            }
-        };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth < 768) {
+        setActive(window.scrollY > 150);
+      }
+    };
 
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div className="navbar py-7 flex justify-between items-center ">
-        <div className="logo">
-            <h1 className="text-3xl font-bold bg-white p-1 md:bg-transparent">My Portfolio</h1>
-        </div>
-        <ul className={`menu flex items-center mt-4 sm:gap-10 gap-8 md:static fixed left-1/2 -translate-x-1/2 md:translate-x-0 md:opacity-100 bg-white/30 backdrop-blur-3xl p-4 rounded-2xl md:bg-transparent transition-all md:transition-none | ${active ? "top-0 opacity-100 drop-shadow-xl/50" : "-top-10 opacity-0"}`}>
-            <li>
-                <a href="#" className="sm:text-lg font-medium text-base">Home</a>
-            </li>
-            <li>
-                <a href="#" className="sm:text-lg font-medium text-base">About</a>
-            </li>
-            <li>
-                <a href="#" className="sm:text-lg font-medium text-base">Portfolio</a>
-            </li>
-            <li>
-                <a href="#" className="sm:text-lg font-medium text-base">Contacs</a>
-            </li>
+    <div
+  className={`
+    z-50 transition-all duration-300
+    ${active 
+      ? 'fixed top-4 left-4 right-4 bg-white/20 backdrop-blur-md px-6 py-3 rounded-2xl shadow-md md:left-0 md:right-0 md:top-0 md:rounded-none md:shadow-none' 
+      : 'fixed -top-10 opacity-0 md:top-0 md:opacity-100 md:left-0 md:right-0'
+    }
+    w-[calc(100%-2rem)] md:w-full md:sticky md:bg-[#030712] md:border-b md:border-white/50
+    mx-auto
+  `}
+>
+      <nav className="max-w-screen-xl mx-auto ">
+        <ul className="menu flex items-center justify-center gap-8 md:gap-10 py-3 text-sm font-mono text-whit">
+          <li><a href="#" className="hover:text-cyan-400 transition">Home</a></li>
+          <li><a href="#" className="hover:text-cyan-400 transition">About</a></li>
+          <li><a href="#" className="hover:text-cyan-400 transition">Portfolio</a></li>
+          <li><a href="#" className="hover:text-cyan-400 transition">Contact</a></li>
         </ul>
+      </nav>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
