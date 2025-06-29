@@ -8,7 +8,7 @@ import {
 import AboutCodeBlock from "./AboutCodeBlock";
 
 const ROTATION_RANGE = 32.5;
-const MAX_ROTATION = 15;
+const MAX_ROTATION = 25;
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
@@ -64,7 +64,7 @@ const TiltCard = () => {
       const currentY = window.scrollY;
       const diff = currentY - lastScrollY.current;
 
-      const rX = clamp(diff * -2.5, -MAX_ROTATION, MAX_ROTATION);
+      const rX = clamp(diff * -5, -MAX_ROTATION, MAX_ROTATION);
       scrollInfluence.current = rX;
 
       rotateX.set(mouseInfluence.current + scrollInfluence.current);
