@@ -12,11 +12,11 @@ import TiltAboutCard from './components/TiltAboutCard.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <PreLoader />
-    <Navbar />
-    <div className='container mx-auto px-0 md:px-10 border-0 md:border-x md:border-white/50'>
-      <div className='px-0 border-0 md:border-x md:border-white/50'>
-        {/* <TiltAboutCard /> */}
+    {/* <PreLoader />
+    <Navbar /> */}
+
+    <div className='container stripe-bg mx-auto px-0 md:px-10 border-0 md:border-x md:border-white/50 relative z-10'>
+      <div className='px-0 border-0 md:border-x md:border-white/50 bg-darknight'>
         <App />
         <Footer />
       </div>

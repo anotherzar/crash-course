@@ -17,7 +17,7 @@ function App() {
     <>
     {/* Landing */}
     <div className="hero grid grid-cols-1 md:grid-cols-2 items-start pt-0 gap-3 xl:gap-0">
-      <div className="pt-8 md:pt-16">
+      <div className="pt-8 md:pt-16 ">
         <h1 className='text-5xl/tight font-medium mb-6 border-y border-white/50 px-4'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, vero.</h1>
         <p className='text-config-1 px-4 text-base/loose text-gray-400 text-justify border-y border-white/50'>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, doloribus minus! Nam provident tempore suscipit
@@ -35,11 +35,8 @@ function App() {
 
     {/* About */}
     <div className="about grid grid-cols-1 md:grid-cols-2 items-start border-y border-white/50 bg-dots">
-      <div className="mx-auto px-4 py-2 md:px-2 bg-gray-costume border-r-0 md:border-r border-white/50 w-full">
+      <div className="mx-auto px-4 py-2 md:px-2 bg-blueprint grid-bg border-r-0 md:border-r border-white/50 w-full grid grid-cols-1">
         <TiltAboutCard />
-        {/* <div className='bg-gray-costume-2 p-4 rounded-2xl border border-white/50'>
-          <AboutCodeBlock/>
-        </div> */}
       </div>
 
       {/* Tools */}

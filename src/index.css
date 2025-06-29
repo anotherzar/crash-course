@@ -25,4 +25,24 @@
     .bg-gray-costume-2 {
         background-color: #1d1f21;
     }
+    .stripe-bg {
+        background-image: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.2) 0,
+        rgba(255, 255, 255, 0.2) 1px,
+        transparent 1px,
+        transparent 12px
+        );
+        background-size: auto;
+        background-repeat: repeat;
+    }
+    .grid-bg {
+        background-image: 
+        linear-gradient(to right, rgba(255,255,255, 0.4) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255, 0.4) 1px, transparent 1px);
+        background-size: 16px 16px;
+    }
+    .bg-blueprint {
+        background-color: #405cb0;
+    }
 }
