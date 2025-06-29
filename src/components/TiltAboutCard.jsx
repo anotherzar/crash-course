@@ -64,7 +64,7 @@ const TiltCard = () => {
       const currentY = window.scrollY;
       const diff = currentY - lastScrollY.current;
 
-      const rX = clamp(diff * -0.5, -MAX_ROTATION, MAX_ROTATION);
+      const rX = clamp(diff * -2.5, -MAX_ROTATION, MAX_ROTATION);
       scrollInfluence.current = rX;
 
       rotateX.set(mouseInfluence.current + scrollInfluence.current);
