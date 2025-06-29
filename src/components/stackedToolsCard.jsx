@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import move from "lodash-move";
 import { listTools } from "../data";
 
-const CARD_OFFSET = 30;
+const CARD_OFFSET = -25;
 const SCALE_FACTOR = 0.1;
-const ACTIVE_SCALE = 1.05;
+const ACTIVE_SCALE = 1;
 
 const CardStackHorizontal = () => {
   const [cards, setCards] = useState(listTools);
@@ -15,8 +15,8 @@ const CardStackHorizontal = () => {
   };
 
   return (
-    <div className="flex px-4 md:px-0 justify-center items-start pt-6 pb-10  overflow-x-hidden">
-      <ul className="relative w-full max-w-5xl h-[200px] ml-6 md:ml-50 lg:ml-35">
+    <div className="flex px-4 md:px-0 pt-6 pb-10 overflow-x-hidden">
+      <ul className="relative w-full max-w-5xl h-[200px] translate-x-[9%] md:translate-x-[20%]">
         {cards.map((tool, index) => {
           const offset = index - 0;
           const canDrag = index === 0;
@@ -34,11 +34,11 @@ const CardStackHorizontal = () => {
               drag={canDrag ? "x" : false}
               dragConstraints={{ left: 0, right: 0 }}
               onDragEnd={() => moveToEnd(index)}
-              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30, velocity: 3 }}
               style={{
-                left: "2%",
+                left: "5%",
                 top: 0,
-                transform: "translateX(0%)"
+                transform: "translateX(0%)",
               }}
             >
               <img src={tool.logo} alt={tool.app_name} className="w-14 h-14 object-contain" />

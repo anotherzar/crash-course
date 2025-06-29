@@ -1,7 +1,6 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark, dracula } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { div, i } from 'motion/react-client';
-import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const jsSyntax = `export const aboutMe = {
   name: 'Zar',
@@ -15,9 +14,6 @@ const jsSyntax = `export const aboutMe = {
 `;
 
 const fileName = 'aboutMe.js'
-
-
-
 
 const AboutCodeBlock = () => {
   return (

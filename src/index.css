@@ -13,10 +13,16 @@
         font-family: "IBM Plex Mono", monospace;
     }
     .bg-dots {
-        background-image: radial-gradient(#9a9a9a 1px, transparent 1px);
+        background-image: radial-gradient(#9a9a9a 0.5px, transparent 1px);
         background-size: 16px 16px;
     }
     .text-glow {
-        text-shadow: 0 0 8px #99feff, 0 0 40px #99feff;
+        text-shadow: 0 0 8px #99feff, 0 0px 25px #99feff, 0 0px 35px #99feff;
+    }
+    .bg-gray-costume {
+        background-color: #1c1f29;
+    }
+    .bg-gray-costume-2 {
+        background-color: #1d1f21;
     }
 }

@@ -6,6 +6,7 @@ import AboutCodeBlock from './components/AboutCodeBlock'
 import { motion } from 'framer-motion';
 import ToolsSection from './components/stackedToolsCard';
 import Hero_3d from './components/spline3D_obj';
+import TiltAboutCard from './components/TiltAboutCard.jsx'
 
 
 function App() {
@@ -27,30 +28,22 @@ function App() {
           </button>
         </div>
       </div>
-      <div className='relative flex justify-center md:justify-end w-full aspect-square h-max overflow-hidden border-white/50 border-y-0 border-l-0 md:border-l-1 md:border-b-0'>
+      <div className='relative flex justify-center md:justify-end w-full aspect-square h-max overflow-hidden border-white/50 border-y-0 border-l-0 border-t-1 md:border-l-1 md:border-b-0 md:border-t-0'>
         <Hero_3d />
-        {/* {heroImg ? (
-          <img
-            src={heroImg}
-            alt="Hero"
-            className="absolute top-0 object-none"
-          />
-        ) : (
-          <div className="absolute" />
-        )} */}
       </div>
     </div>
 
     {/* About */}
     <div className="about grid grid-cols-1 md:grid-cols-2 items-start border-y border-white/50 bg-dots">
-      <div className="mx-auto p-3 bg-zinc-800 border-r border-white/50 w-full">
-        <div className='bg-zinc-950 p-4 rounded-2xl border border-white/50'>
+      <div className="mx-auto px-4 py-2 md:px-2 bg-gray-costume border-r-0 md:border-r border-white/50 w-full">
+        <TiltAboutCard />
+        {/* <div className='bg-gray-costume-2 p-4 rounded-2xl border border-white/50'>
           <AboutCodeBlock/>
-        </div>
+        </div> */}
       </div>
 
       {/* Tools */}
-      <div className="tools flex flex-col">
+      <div className="tools flex flex-col border-white/50 border-t md:border-t-0">
         <h1 className='font-bold text-4xl text-center text-glow pt-7'>Tools</h1>
         {/* tools-cards */}
         <ToolsSection />
