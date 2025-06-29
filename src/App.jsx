@@ -5,7 +5,7 @@ import {listSocial} from "./data"
 import AboutCodeBlock from './components/AboutCodeBlock'
 import { motion } from 'framer-motion';
 import ToolsSection from './components/stackedToolsCard';
-import Hero_3d from './components/spline3D_obj';
+import Hero3d from './components/spline3D_obj.jsx'
 import TiltAboutCard from './components/TiltAboutCard.jsx'
 
 
@@ -29,7 +29,7 @@ function App() {
         </div>
       </div>
       <div className='relative flex justify-center md:justify-end w-full aspect-square h-max overflow-hidden border-white/50 border-y-0 border-l-0 border-t-1 md:border-l-1 md:border-b-0 md:border-t-0'>
-        <Hero_3d />
+        <Hero3d />
       </div>
     </div>
 
