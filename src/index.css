@@ -14,7 +14,7 @@
     }
     .bg-dots {
         background-image: radial-gradient(#9a9a9a 0.5px, transparent 1px);
-        background-size: 16px 16px;
+        background-size: 24px 24px;
     }
     .text-glow {
         text-shadow: 0 0 8px #99feff, 0 0px 25px #99feff, 0 0px 35px #99feff;

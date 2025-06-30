@@ -17,7 +17,7 @@ const fileName = 'aboutMe.js'
 
 const AboutCodeBlock = () => {
   return (
-    <div className='font-mono'>
+    <div className='font-mono w-full max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl overflow-x-auto rounded-xl bg-zinc-900 border border-zinc-600 p-4 shadow-md'>
         {fileName}
       <SyntaxHighlighter language="javascript" style={atomDark}>
         {jsSyntax}

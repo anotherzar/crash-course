@@ -16,7 +16,7 @@ const CardStackHorizontal = () => {
 
   return (
     <div className="flex px-4 md:px-0 pt-6 pb-10 overflow-x-hidden">
-      <ul className="relative w-full max-w-5xl h-[200px] translate-x-[9%] md:translate-x-[25%]">
+      <ul className="relative w-full max-w-5xl h-[200px] mx-auto">
         {cards.map((tool, index) => {
           const offset = index - 0;
           const canDrag = index === 0;
@@ -24,7 +24,7 @@ const CardStackHorizontal = () => {
           return (
             <motion.li
               key={tool.id}
-              className="absolute w-[300px] h-[150px] rounded-xl list-none bg-zinc-800 border border-zinc-600 p-4 flex gap-4 items-center shadow-md"
+              className="absolute left-1/2 top-0 -translate-x-1/2 w-[300px] h-[150px] rounded-xl list-none bg-zinc-800 border border-zinc-600 p-4 flex gap-4 items-center shadow-md"
               animate={{
                 x: offset * CARD_OFFSET,
                 scale: offset === 0 ? ACTIVE_SCALE : 1 - Math.abs(offset) * SCALE_FACTOR,
@@ -36,9 +36,9 @@ const CardStackHorizontal = () => {
               onDragEnd={() => moveToEnd(index)}
               transition={{ type: "spring", stiffness: 300, damping: 30, velocity: 3 }}
               style={{
-                left: "5%",
+                left: "50%",
                 top: 0,
-                transform: "translateX(0%)",
+                transform: "translateX(-50%)",
               }}
             >
               <img src={tool.logo} alt={tool.app_name} className="w-14 h-14 object-contain" />

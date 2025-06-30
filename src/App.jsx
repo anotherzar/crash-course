@@ -9,8 +9,6 @@ import Hero3d from './components/spline3D_obj.jsx'
 import TiltAboutCard from './components/TiltAboutCard.jsx'
 import { lazy, Suspense } from 'react';
 
-
-
 const HeroSpline = lazy(() => import('./components/spline3D_obj.jsx'));
 
 function App() {
@@ -20,7 +18,7 @@ function App() {
   return (
     <>
     {/* Landing */}
-    <div className="hero grid grid-cols-1 md:grid-cols-2 items-start pt-0 gap-3 xl:gap-0">
+    <div className="hero grid grid-cols-1 lg:grid-cols-2 items-start pt-0 gap-0 xl:gap-0">
       <div className="pt-8 md:pt-16 ">
         <h1 className='text-5xl/tight font-medium mb-6 border-y border-white/50 px-4'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, vero.</h1>
         <p className='text-config-1 px-4 text-base/loose text-gray-400 text-justify border-y border-white/50'>
@@ -40,7 +38,7 @@ function App() {
     </div>
 
     {/* About */}
-    <div className="about grid grid-cols-1 md:grid-cols-2 items-start border-y border-white/50 bg-dots">
+    <div className="about grid grid-cols-1 lg:grid-cols-2 items-start border-y border-white/50 bg-dots">
       <div className="mx-auto px-4 py-2 md:px-2 bg-blueprint grid-bg border-r-0 md:border-r border-white/50 w-full grid grid-cols-1">
         <TiltAboutCard />
       </div>
