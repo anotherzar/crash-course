@@ -111,3 +111,18 @@ export const listSocial = [
     dad: "400"
   },
 ];
+
+export const profileBadge =[
+  {
+    id: 1,
+    nama_badge: '🧪Visual Alchemist',
+  },
+  {
+    id: 2,
+    nama_badge: '🔧Visual Mechanic',
+  },
+  {
+    id: 3,
+    nama_badge: '🌠Realtime Dreamer',
+  },
+];

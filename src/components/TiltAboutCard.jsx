@@ -92,14 +92,14 @@ const TiltCard = () => {
         transformStyle: "preserve-3d",
         transform,
       }}
-      className="relative max-w-[342px] sm:max-w-md lg:max-w-[720px] rounded-2xl bg-gray-costume-2 border border-white/50"
+      className="relative max-w-[342px] sm:max-w-md lg:max-w-[720px] rounded-2xl bg-gray-costume-2 border border-white/50 "
     >
       <div
         style={{
-          transform: "translateZ(40px)",
+          transform: "translateZ(120px)",
           transformStyle: "preserve-3d",
         }}
-        className="grid rounded-xl p-4"
+        className="grid rounded-xl p-4 "
       >
         <AboutCodeBlock />
       </div>
@@ -109,7 +109,7 @@ const TiltCard = () => {
 
 const TiltCardWrapper = () => {
   return (
-    <div className="grid w-full place-content-center">
+    <div className="grid w-full place-content-center shadow-lg">
       <TiltCard />
     </div>
   );

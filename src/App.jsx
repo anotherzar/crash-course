@@ -8,6 +8,8 @@ import ToolsSection from './components/stackedToolsCard';
 import Hero3d from './components/spline3D_obj.jsx'
 import TiltAboutCard from './components/TiltAboutCard.jsx'
 import { lazy, Suspense } from 'react';
+import { profileBadge } from './data'
+import { div, h1 } from 'framer-motion/client'
 
 const HeroSpline = lazy(() => import('./components/spline3D_obj.jsx'));
 
@@ -20,17 +22,31 @@ function App() {
     {/* Landing */}
     <div className="hero grid grid-cols-1 lg:grid-cols-2 items-start pt-0 gap-0 xl:gap-0">
       <div className="pt-8 md:pt-16 ">
-        <h1 className='text-5xl/tight font-medium mb-6 border-y border-white/50 px-4'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, vero.</h1>
-        <p className='text-config-1 px-4 text-base/loose text-gray-400 text-justify border-y border-white/50'>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, doloribus minus! Nam provident tempore suscipit
+        <h1 className='text-5xl/tight font-medium mb-6 border-y border-white/30 px-4'>
+          Crafting motion that moves people.
+        </h1>
+        <p className='text-config-1 px-4 text-base/loose text-gray-400 text-justify border-y border-white/30'>
+          Currently studying Informatics while crafting visuals that move and inspire. Specializing in motion graphics, VFX, and creative coding.
         </p>
-        <div className='mt-10 border-y border-white/50 px-4'>
-          <button className='bg-zinc-800 p-5 rounded-2xl border border-white/50'>
-            <a href="" className='text-config-1'>Download CV</a>
+
+        <div className='mt-10  px-4 border-y border-white/30'>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+            {profileBadge.map (badge => (
+              <div className='' key={badge.id}>
+                {
+                  <h1 className='bg-zinc-800 flex justify-left p-2 px-4 rounded-3xl font-mono '>{badge.nama_badge}</h1>
+                }
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className='mt-10 border-y border-white/30 px-4'>
+          <button className='bg-zinc-800 p-5 rounded-2xl border border-white/30 shadow-2xl/30 shadow-blue-300'>
+            <a href="" className='text-config-'>📄 Get My CV</a>
           </button>
         </div>
       </div>
-      <div className='relative flex justify-center md:justify-end w-full aspect-square h-max overflow-hidden border-white/50 border-y-0 border-l-0 border-t-1 md:border-l-1 md:border-b-0 md:border-t-0'>
+      <div className='relative flex justify-center md:justify-end w-full aspect-square h-max overflow-hidden border-white/30 border-y-0 border-l-0 border-t-1 md:border-l-1 md:border-b-0 md:border-t-0'>
         <Suspense fallback={<div className="h-[400px] bg-black/20">Loading...</div>}>
           <Hero3d />
         </Suspense>
@@ -38,13 +54,13 @@ function App() {
     </div>
 
     {/* About */}
-    <div className="about grid grid-cols-1 lg:grid-cols-2 items-start border-y border-white/50 bg-dots">
-      <div className="mx-auto px-4 py-2 md:px-2 bg-blueprint grid-bg border-r-0 md:border-r border-white/50 w-full grid grid-cols-1">
+    <div className="about grid grid-cols-1 lg:grid-cols-2 items-start border-y border-white/30 bg-dots">
+      <div className="mx-auto px-4 py-2 md:px-2 bg-blueprint grid-bg border-r-0 md:border-r border-white/30 w-full grid grid-cols-1 ">
         <TiltAboutCard />
       </div>
 
       {/* Tools */}
-      <div className="tools flex flex-col border-white/50 border-t md:border-t-0">
+      <div className="tools flex flex-col border-white/30 border-t md:border-t-0">
         <h1 className='font-bold text-4xl text-center text-glow pt-7'>Tools</h1>
         {/* tools-cards */}
         <ToolsSection />
