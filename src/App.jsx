@@ -7,7 +7,11 @@ import { motion } from 'framer-motion';
 import ToolsSection from './components/stackedToolsCard';
 import Hero3d from './components/spline3D_obj.jsx'
 import TiltAboutCard from './components/TiltAboutCard.jsx'
+import { lazy, Suspense } from 'react';
 
+
+
+const HeroSpline = lazy(() => import('./components/spline3D_obj.jsx'));
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,7 +33,9 @@ function App() {
         </div>
       </div>
       <div className='relative flex justify-center md:justify-end w-full aspect-square h-max overflow-hidden border-white/50 border-y-0 border-l-0 border-t-1 md:border-l-1 md:border-b-0 md:border-t-0'>
-        <Hero3d />
+        <Suspense fallback={<div className="h-[400px] bg-black/20">Loading...</div>}>
+          <Hero3d />
+        </Suspense>
       </div>
     </div>
 

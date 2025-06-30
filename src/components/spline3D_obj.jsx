@@ -1,15 +1,9 @@
 import Spline from '@splinetool/react-spline';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useMotionValue, useSpring } from 'framer-motion';
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 const lerp = (start, end, t) => start + (end - start) * t;
-
-const MAX_ROTATION_Y = Math.PI / 8;
-const MAX_ROTATION_X = Math.PI / 20; // default 10
-const MAX_CAMERA_SCROLL_OFFSET = 100; // buat kontrol max scroll - + (default 20)
-
-const INITIAL_CAMERA_Y = 110; // <- default position Y axis camera di  (default 60)
 
 const HeroSpline = () => {
   const splineRef = useRef(null);
@@ -22,6 +16,23 @@ const HeroSpline = () => {
   const scrollYValue = useMotionValue(0);
   const smoothScroll = useSpring(scrollYValue, { stiffness: 80, damping: 20 });
 
+  // Pengaturan buat resposive device scroll
+  const [cameraConfig, setCameraConfig] = useState({
+    INITIAL_CAMERA_Y: 60,
+    MAX_CAMERA_SCROLL_OFFSET: 20,
+  });
+
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+
+    // logika camera position bakal device
+    setCameraConfig({
+      INITIAL_CAMERA_Y: isMobile ? 110 : 60,
+      MAX_CAMERA_SCROLL_OFFSET: isMobile ? 100 : 20,
+    });
+  }, []);
+
+  // Mouse move tracking
   useEffect(() => {
     const handleMouseMove = (e) => {
       const mouseX = e.clientX / window.innerWidth;
@@ -30,24 +41,29 @@ const HeroSpline = () => {
       const rawRotY = (mouseX - 0.5) * Math.PI;
       const rawRotX = (mouseY - 0.5) * Math.PI;
 
-      targetRotation.current.y = clamp(rawRotY, -MAX_ROTATION_Y, MAX_ROTATION_Y);
-      targetRotation.current.x = clamp(rawRotX, -MAX_ROTATION_X, MAX_ROTATION_X);
+      targetRotation.current.y = clamp(rawRotY, -Math.PI / 8, Math.PI / 8);
+      targetRotation.current.x = clamp(rawRotX, -Math.PI / 20, Math.PI / 20);
     };
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  // Scroll tracking
   useEffect(() => {
     const handleScroll = () => {
       const scroll = window.scrollY;
-      const mapped = clamp(scroll * 0.1, -MAX_CAMERA_SCROLL_OFFSET, MAX_CAMERA_SCROLL_OFFSET);
+      const mapped = clamp(
+        scroll * 0.1,
+        -cameraConfig.MAX_CAMERA_SCROLL_OFFSET,
+        cameraConfig.MAX_CAMERA_SCROLL_OFFSET
+      );
       scrollYValue.set(mapped);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [scrollYValue]);
+  }, [cameraConfig, scrollYValue]);
 
   useEffect(() => {
     const animate = () => {
@@ -61,14 +77,14 @@ const HeroSpline = () => {
 
       if (cameraRef.current) {
         const scrollOffset = smoothScroll.get();
-        cameraRef.current.position.y = INITIAL_CAMERA_Y - scrollOffset;
+        cameraRef.current.position.y = cameraConfig.INITIAL_CAMERA_Y - scrollOffset;
       }
 
       requestAnimationFrame(animate);
     };
 
     animate();
-  }, [smoothScroll]);
+  }, [cameraConfig, smoothScroll]);
 
   const handleLoad = (spline) => {
     const object = spline.findObjectByName('Char_zar');
@@ -78,9 +94,8 @@ const HeroSpline = () => {
     if (camera) {
       cameraRef.current = camera;
 
-      // Posisi camera di spline nya
       camera.position.x = 0.6;
-      camera.position.y = INITIAL_CAMERA_Y;
+      camera.position.y = cameraConfig.INITIAL_CAMERA_Y;
       camera.position.z = 179.3;
     }
   };
