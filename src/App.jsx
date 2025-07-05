@@ -29,7 +29,7 @@ function App() {
           Currently studying Informatics while crafting visuals that move and inspire. Specializing in motion graphics, VFX, and creative coding.
         </p>
 
-        <div className='mt-10  px-4 border-y border-white/30'>
+        <div className='mt-10 px-4 border-y border-white/30'>
           <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
             {profileBadge.map (badge => (
               <div className='' key={badge.id}>
@@ -72,7 +72,7 @@ function App() {
       <h1 className='font-bold text-2xl'>Portfolio</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptate nulla vitae dolore dicta, ipsum atque temporibus quod modi architecto!</p>
     {/* Projects-Cards */}
-      <div className='Portfolio-box mt-4 grid grid-cols-2 lg:grid-cols-4 gap-4 p-4 border border-white/50 rounded-xl bg-zinc-950'>
+      <div className='Portfolio-box mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 border border-white/50 rounded-xl bg-zinc-950'>
         {listProject.map(project => (
           <div key={project.id} className='p-2 bg-zinc-800 items-center rounded-xl'>
             <img src={project.img} alt="" className='p-1 rounded-xl h-50 w-full object-cover'/>
