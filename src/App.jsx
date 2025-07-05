@@ -48,7 +48,7 @@ function App() {
       </div>
       <div className='relative flex justify-center md:justify-end w-full aspect-square h-max overflow-hidden border-white/30 border-y-0 border-l-0 border-t-1 md:border-l-1 md:border-b-0 md:border-t-0'>
         <Suspense fallback={<div className="h-[400px] bg-black/20">Loading...</div>}>
-          <Hero3d />
+          {/* <Hero3d /> */}
         </Suspense>
       </div>
     </div>
@@ -68,14 +68,14 @@ function App() {
     </div>
 
     {/* Portfolio */}
-    <div className="portfolio mt-8 py-10 text-justify">
+    <div className="portfolio mt-8 py-1 text-justify px-4 bg-zinc-900 border-y border-white/50">
       <h1 className='font-bold text-2xl'>Portfolio</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo voluptate nulla vitae dolore dicta, ipsum atque temporibus quod modi architecto!</p>
     {/* Projects-Cards */}
-      <div className='Portfolio-box mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4'>
+      <div className='Portfolio-box mt-4 grid grid-cols-2 lg:grid-cols-4 gap-4 p-4 border border-white/50 rounded-xl bg-zinc-950'>
         {listProject.map(project => (
-          <div key={project.id} className='p-3 bg-zinc-800 gap-2 items-center rounded-xl'>
-            {/* <img src={project.img} alt="" className='p-1 rounded-xl h-50 w-full object-cover'/> */}
+          <div key={project.id} className='p-2 bg-zinc-800 items-center rounded-xl'>
+            <img src={project.img} alt="" className='p-1 rounded-xl h-50 w-full object-cover'/>
             <div>
               <h4 className='font-bold p-1'>{project.Project_name}</h4>
             </div>

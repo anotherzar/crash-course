@@ -79,8 +79,8 @@ export const listProject = [
   },
  {
     id: 4,
-    img: "https://github.com/anotherzar/website-introducing/blob/main/prv-sekolah.gif?raw=true",
-    Project_name: "School Projects",
+    img: "https://cdn.shopify.com/s/files/1/1268/5407/files/what-is-ieee-802.3.jpg?v=1591386495",
+    Project_name: "Publications",
     dad: "400"
   },
 ];
@@ -119,7 +119,7 @@ export const profileBadge =[
   },
   {
     id: 2,
-    nama_badge: '🔧Visual Mechanic',
+    nama_badge: '🔧Motion Mechanic',
   },
   {
     id: 3,
