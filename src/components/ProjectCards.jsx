@@ -1,4 +1,4 @@
-import { listProject } from "../data";
+import {listProject} from "./data"
 
 const ProjectCards = ({ listProject }) => {
   return (
@@ -12,7 +12,7 @@ const ProjectCards = ({ listProject }) => {
           />
           <div>
             <h4 className="font-bold p-1">{project.Project_name}</h4>
-            <a href=""></a>
+            <a href="">c</a>
           </div>
         </div>
       ))}

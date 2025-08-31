@@ -77,6 +77,12 @@ export const listProject = [
     Project_name: "School Projects",
     dad: "300"
   },
+ {
+    id: 4,
+    img: "",
+    Project_name: "Publications",
+    dad: "400"
+  },
 ];
 
 export const listSocial = [
