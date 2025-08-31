@@ -79,7 +79,7 @@ export const listProject = [
   },
  {
     id: 4,
-    img: "https://cdn.shopify.com/s/files/1/1268/5407/files/what-is-ieee-802.3.jpg?v=1591386495",
+    img: "",
     Project_name: "Publications",
     dad: "400"
   },
@@ -90,6 +90,7 @@ export const listSocial = [
     id: 1,
     social_logo: "/assets/socmed_logo/ig.webp",
     Socmed_name: "Instagram",
+    url: "test",
     dad: "100"
   },
   {
@@ -100,13 +101,13 @@ export const listSocial = [
   },
   {
     id: 3,
-    social_logo: "/assets/socmed_logo/dc.webp",
+    social_logo: "/assets/socmed_logo/dc.png",
     Socmed_name: "Discord",
     dad: "300"
   },
     {
     id: 4,
-    social_logo: "/assets/socmed_logo/yt.webp",
+    social_logo: "/assets/socmed_logo/yt.png",
     Socmed_name: "Youtube",
     dad: "400"
   },
@@ -115,14 +116,17 @@ export const listSocial = [
 export const profileBadge =[
   {
     id: 1,
-    nama_badge: '🧪Visual Alchemist',
+    nama_badge: '🧪 Visual Alchemist',
+    warna: 'green',
   },
   {
     id: 2,
-    nama_badge: '🔧Motion Mechanic',
+    nama_badge: '🔧 Motion Mechanic',
+    warna: 'blue',
   },
   {
     id: 3,
-    nama_badge: '🌠Realtime Dreamer',
+    nama_badge: '🌠 Realtime Dreamer',
+    warna: 'zinc',
   },
 ];
